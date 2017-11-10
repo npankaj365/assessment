@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-<!-- '''
-        <act_window id="action_assessment_menu"
+
+        <act_window 
+            id="action_assessment_menu"
             name="Test Creations"
             res_model="assessment.test_creation_asmt" 
             view_mode="tree" />
 
-        <act_window id="action_testpaper_menu"
+        <act_window 
+            id="action_testpaper_menu"
             name="Test Papers"
             res_model="assessment.test_paper_asmt" 
             view_mode="tree" />
         
         
-        <act_window id="action_domain_menu"
+        <act_window 
+            id="action_domain_menu"
             name="Domains"
             res_model="assessment.domain_asmt" 
             view_mode="tree,form" />
 
-        <act_window id="action_subdomain_menu"
+        <act_window 
+            id="action_subdomain_menu"
             name="Sub Domains"
             res_model="assessment.subdomain_asmt" 
             view_mode="tree,form" />
 
-        <act_window id="action_lesson_menu"
+        <act_window 
+            id="action_lesson_menu"
             name="Lessons"
             res_model="assessment.lesson_asmt" 
             view_mode="tree,form" />
@@ -31,7 +36,7 @@
         <act_window id="action_objective_menu"
             name="Learning Objectives"
             res_model="assessment.objective_asmt" 
-            view_mode="tree,form" /> -->
+            view_mode="tree,form" />
 
         <menuitem 
             id="assessment.menu_root" 
@@ -47,13 +52,15 @@
             id="test_creation_list"
             name="Test Creations"
             parent="test_menu_list"
-            sequence="10" />
+            sequence="10" 
+            action="action_assessment_menu" />
 
         <menuitem
             id="test_paper_list"
             name="Test Papers"
-            parent="test_paper_list"
-            sequence="20" />
+            parent="test_menu_list"
+            sequence="20" 
+            action="action_testpaper_menu" />
 
         <menuitem
             id="question_menu_list"
@@ -65,61 +72,35 @@
             id="domain_menu_list"
             name="Domains"
             parent="question_menu_list"
-            sequence="10" />
+            sequence="10" 
+            action="action_domain_menu" />
 
         <menuitem
             id="subdomain_menu_list"
             name="Sub-Domains"
-            parent="subdomain_menu_list"
-            sequence="20" />
+            parent="question_menu_list"
+            sequence="20" 
+            action="action_subdomain_menu" />
         
         <menuitem
             id="lesson_menu_list"
             name="Lessons"
-            parent="lesson_menu_list"
-            sequence="30" />
+            parent="question_menu_list"
+            sequence="30" 
+            action="action_lesson_menu" />
 
         <menuitem
             id="objective_menu_list"
             name="Objectives"
-            parent="objective_menu_list"
-            sequence="40" />
+            parent="question_menu_list"
+            sequence="40"
+            action="action_objective_menu" />
 
         <menuitem
-            id="question_menu_list"
+            id="question_item_menu_list"
             name="Questions"
             parent="question_menu_list"
             sequence="50" />
 
-        <!-- <menuitem 
-            id="menu_assessment_test_creation_view" 
-            name="Created Tests" 
-            parent="assessment.menu_assessment" 
-            action="action_assessment_menu" />
-        <menuitem 
-            id="menu_assessment_test_papers_view" 
-            name="Test Papers" 
-            parent="assessment.menu_assessment" 
-            action="action_testpaper_menu" />
-        <menuitem 
-            id="menu_assessment_domain_view" 
-            name="Domains" 
-            parent="assessment.menu_assessment" 
-            action="action_domain_menu" />
-        <menuitem 
-            id="menu_assessment_subdomain_view" 
-            name="Sub Domains" 
-            parent="assessment.menu_assessment" 
-            action="action_subdomain_menu" />
-        <menuitem 
-            id="menu_assessment_lesson_view" 
-            name="Lessons" 
-            parent="assessment.menu_assessment" 
-            action="action_lesson_menu" />
-        <menuitem 
-            id="menu_assessment_objective_view" 
-            name="Objectives" 
-            parent="assessment.menu_assessment" 
-            action="action_objective_menu" /> -->
     </data>
 </odoo>
