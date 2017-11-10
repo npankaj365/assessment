@@ -100,7 +100,27 @@
             id="question_item_menu_list"
             name="Questions"
             parent="question_menu_list"
-            sequence="50" />
+            sequence="50" 
+            action="action_objective_menu" />
 
+        <menuitem
+            id="evaluation_menu_list"
+            name="Evaluations"
+            parent="assessment.menu_root"
+            sequence="30" />
+        
+        <menuitem
+            id="rubric_list"
+            name="Rubrics"
+            parent="evaluation_menu_list"
+            sequence="10" 
+            action="action_objective_menu" />
+
+        <menuitem
+            id="test_result_list"
+            name="Results"
+            parent="evaluation_menu_list"
+            sequence="20" 
+            action="action_objective_menu" />
     </data>
 </odoo>
