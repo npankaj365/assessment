@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_objective" model="ir.ui.view">
+            <field name="name">Add Learning Objectives</field>
+            <field name="model">assessment.objective_asmt</field>
+            <field name="arch" type="xml">
+                <form string="Objectives List">
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="enabled" readonly="1" />
+                        <field name="lesson" />
+                        <field name="subdomain" />
+                        <field name="domain" />
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

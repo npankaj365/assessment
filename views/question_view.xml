@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_question" model="ir.ui.view">
+            <field name="name">Add Questions</field>
+            <field name="model">assessment.question_asmt</field>
+            <field name="arch" type="xml">
+                <form string="Questions List">
+                    <group>
+                        <field name="statement" />
+                        <field name="explanation" />
+                        <field name="question_type" />
+                        <field name="question_difficulty" />
+                        <field name="enabled" readonly="1" />
+                        <field name="time_required" />
+                        <field name="objective" />
+                        <field name="lesson" />
+                        <field name="subdomain" />
+                        <field name="domain" />
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

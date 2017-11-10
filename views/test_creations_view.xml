@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="assessment.view_tree_test_creation" model="ir.ui.view">
+            <field name="name">Test Creations</field>
+            <field name="model">assessment.test_creation_asmt</field>
+            <field name="arch" type="xml">
+                <tree string="Test Creations">
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="date" readonly="1" />
+                        <field name="test_duration" />
+                        <field name="question_type" />
+                        <field name="lesson" />
+                        <field name="subdomain" />
+                        <field name="domain" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_domain" model="ir.ui.view">
+            <field name="name">Add Lessons</field>
+            <field name="model">assessment.lesson_asmt</field>
+            <field name="arch" type="xml">
+                <form string="Lessons List">
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="enabled" readonly="1" />
+                        <field name="subdomain" />
+                        <field name="domain" />
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
