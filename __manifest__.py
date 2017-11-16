@@ -30,6 +30,10 @@
         'views/test_creations_view.xml',
         'views/domain_view.xml',
         'views/subdomain_view.xml',
+        'views/lesson_view.xml',
+        'views/objective_view.xml',
+        'views/question_view.xml',
+        # 'views/answer_view.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

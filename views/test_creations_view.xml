@@ -8,13 +8,34 @@
                 <tree string="Test Creations">
                         <field name="name" />
                         <field name="description" />
-                        <field name="date" readonly="1" />
+                        <field name="date" />
                         <field name="test_duration" />
                         <field name="question_type" />
-                        <field name="lesson" />
-                        <field name="subdomain" />
                         <field name="domain" />
+                        <field name="subdomain" />
+                        <field name="lesson" />
                 </tree>
+            </field>
+        </record>
+        <record id="assessment.view_form_test_creation" model="ir.ui.view">
+            <field name="name">Test Creations</field>
+            <field name="model">assessment.test_creation_asmt</field>
+            <field name="arch" type="xml">
+                <form string="Test Creations">
+                    <group>
+                        <button type="object" name="generate" string="Generate" />
+                    </group>
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="date" />
+                        <field name="test_duration" />
+                        <field name="question_type" />
+                        <field name="domain" />
+                        <field name="subdomain" />
+                        <field name="lesson" />
+                    </group>
+                </form>
             </field>
         </record>
     </data>

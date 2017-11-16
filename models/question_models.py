@@ -8,6 +8,7 @@ class domain_asmt(models.Model):
     name = fields.Char()
     description = fields.Text()
     enabled = fields.Boolean()
+    
 
 class subdomain_asmt(models.Model):
     _name = 'assessment.subdomain_asmt'
@@ -26,8 +27,9 @@ class lesson_asmt(models.Model):
     description = fields.Text()
     enabled = fields.Boolean()
 
-    subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain')
-    domain = fields.Many2one('assessment.domain_asmt', 'Domain')
+    domain = fields.Many2one('assessment.domain_asmt', 'Domain', required=True)
+    subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', domain="[('domain','=',domain)]", required=True)
+    
 
 class objective_asmt(models.Model):
     _name = 'assessment.objective_asmt'
@@ -36,34 +38,40 @@ class objective_asmt(models.Model):
     description = fields.Text()
     enabled = fields.Boolean()
 
-    lesson = fields.Many2one('assessment.lesson_asmt', 'Lesson')
-    subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain')
     domain = fields.Many2one('assessment.domain_asmt', 'Domain')
+    subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', domain="[('domain','=',domain)]", required=True)
+    lesson = fields.Many2one('assessment.lesson_asmt', 'Lesson', domain="[('subdomain','=',subdomain)]", required=True)
+    
 
 class question_asmt(models.Model):
     _name = 'assessment.question_asmt'
+    _rec_name = 'statement'
 
-    statement = fields.Char()
-    explanation = fields.Text()
+    statement = fields.Char(string="Statement", required=True)
+    explanation = fields.Text(string="Description of the Question")
     question_type = fields.Selection(
         [
-            ('Multiple Choice Single Answer', 1),
-            ('Multiple Choice Multiple Answer', 2),
-        ]
+            ('mcsa','Multiple Choice Single Answer'),
+            ('mcma','Multiple Choice Multiple Answer'),
+            ('o','Order'),
+            ('fa','Free Answer')
+        ], required=True
     )
     question_difficulty = fields.Selection(
         [
-            ('Easy', 1),
-            ('Medium', 2),
-            ('Difficult', 3),
-        ]
+            ('1','Easy'),
+            ('2','Medium'),
+            ('3','Difficult'),
+        ], required=True
     )
+    answer = fields.One2many('assessment.answer_asmt', 'statement')
     enabled = fields.Boolean()
-    time_required = fields.Integer()
-    objective = fields.Many2one('assessment.objective_asmt', 'Objective')
-    lesson = fields.Many2one('assessment.lesson_asmt', 'Lesson')
-    subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain')
-    domain = fields.Many2one('assessment.domain_asmt', 'Domain')
+    time_required = fields.Integer(required=True)
+    domain = fields.Many2one('assessment.domain_asmt', 'Domain', required=True)
+    subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', required=True, domain="[('domain','=',domain)]")
+    lesson = fields.Many2one('assessment.lesson_asmt', 'Lesson', required=True, domain="[('subdomain','=',subdomain)]")
+    objective = fields.Many2one('assessment.objective_asmt', 'Objective', required=True, domain="[('lesson','=',lesson)]")
+    
 
 class answer_asmt(models.Model):
     _name = 'assessment.answer_asmt'
@@ -71,5 +79,5 @@ class answer_asmt(models.Model):
     description = fields.Text()
     explanation = fields.Text()
     is_right = fields.Boolean()
-    question = fields.Many2one('assessment.question_asmt', 'Question')
+    statement = fields.Many2one('assessment.question_asmt', 'Question', ondelete='cascade')
 

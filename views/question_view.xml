@@ -11,12 +11,25 @@
                         <field name="explanation" />
                         <field name="question_type" />
                         <field name="question_difficulty" />
-                        <field name="enabled" readonly="1" />
+                        <field name="answer">
+                            <tree string="Answers">
+                                <field name="description" />
+                                <field name="explanation" />
+                                <field name="is_right" />
+                            </tree>
+                            <group>
+                                <field name="description" />
+                                <field name="explanation" />
+                                <field name="is_right" />
+                                <field name="question" />
+                            </group>
+                        </field>
+                        <field name="enabled" />
                         <field name="time_required" />
-                        <field name="objective" />
-                        <field name="lesson" />
-                        <field name="subdomain" />
                         <field name="domain" />
+                        <field name="subdomain" />
+                        <field name="lesson" />
+                        <field name="objective" />
                     </group>
                 </form>
             </field>

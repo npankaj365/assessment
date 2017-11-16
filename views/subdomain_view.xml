@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+        <record id="view_tree_subdomain" model="ir.ui.view">
+            <field name="name">Sub Domains</field>
+            <field name="model">assessment.subdomain_asmt</field>
+            <field name="arch" type="xml">
+                <tree string="Sub Domains List">
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="domain" />
+                </tree>
+            </field>
+        </record>
+
         <record id="view_form_subdomain" model="ir.ui.view">
             <field name="name">Add Sub Domains</field>
             <field name="model">assessment.subdomain_asmt</field>
             <field name="arch" type="xml">
-                <form string="Sub Domains List">
+                <form string="Sub Domains">
                     <group>
                         <field name="name" />
                         <field name="description" />
-                        <field name="enabled" readonly="1" />
+                        <field name="enabled" />
                         <field name="domain" />
                     </group>
                 </form>

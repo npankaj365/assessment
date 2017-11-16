@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="view_tree_domain" model="ir.ui.view">
+            <field name="name">Domains</field>
+            <field name="model">assessment.domain_asmt</field>
+            <field name="arch" type="xml">
+                <tree string="Domains List">
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="enabled" />
+                </tree>
+            </field>
+        </record>
+
         <record id="view_form_domain" model="ir.ui.view">
             <field name="name">Add Domains</field>
             <field name="model">assessment.domain_asmt</field>
@@ -9,7 +21,7 @@
                     <group>
                         <field name="name" />
                         <field name="description" />
-                        <field name="enabled" readonly="1" />
+                        <field name="enabled" />
                     </group>
                 </form>
             </field>

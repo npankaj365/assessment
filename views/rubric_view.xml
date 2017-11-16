@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_tree_rubric" model="ir.ui.view">
+            <field name="name">Rubrics</field>
+            <field name="model">assessment.rubric_asmt</field>
+            <field name="arch" type="xml">
+                <tree string="Test Creations">
+                    <field name="objective">
+                    <field name="grade_a" />
+                    <field name="grade_b" />
+                    <field name="grade_c" />
+                    <field name="grade_d" />
+                    <field name="grade_e" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_form_rubric" model="ir.ui.view">
+            <field name="name">Rubrics</field>
+            <field name="model">assessment.rubric_asmt</field>
+            <field name="arch" type="xml">
+                <form string="Test Creations">
+                    <group>
+                        <field name="objective" />
+                        <field name="grade_a" />
+                        <field name="grade_b" />
+                        <field name="grade_c" />
+                        <field name="grade_d" />
+                        <field name="grade_e" />
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

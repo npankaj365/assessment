@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
         <act_window 
-            id="action_assessment_menu"
+            id="action_test_creation_menu"
             name="Test Creations"
             res_model="assessment.test_creation_asmt" 
             view_mode="tree" />
@@ -13,7 +12,6 @@
             name="Test Papers"
             res_model="assessment.test_paper_asmt" 
             view_mode="tree" />
-        
         
         <act_window 
             id="action_domain_menu"
@@ -33,9 +31,40 @@
             res_model="assessment.lesson_asmt" 
             view_mode="tree,form" />
 
-        <act_window id="action_objective_menu"
+        <act_window 
+            id="action_objective_menu"
             name="Learning Objectives"
             res_model="assessment.objective_asmt" 
+            view_mode="tree,form" />
+
+        <act_window
+            id="action_question_menu"
+            name="Questions"
+            res_model="assessment.question_asmt" 
+            view_mode="tree,form" />
+
+        <act_window
+            id="action_test_creation_menu"
+            name="Test Creations"
+            res_model="assessment.test_creation_asmt" 
+            view_mode="tree,form" />
+
+        <act_window
+            id="action_rubric_menu"
+            name="Rubrics"
+            res_model="assessment.rubric_asmt" 
+            view_mode="tree,form" />
+
+        <act_window
+            id="action_results_menu"
+            name="Results"
+            res_model="assessment.rubric_asmt" 
+            view_mode="tree,form" />
+
+        <act_window
+            id="action_answers_menu"
+            name="Answers"
+            res_model="assessment.answer_asmt"
             view_mode="tree,form" />
 
         <menuitem 
@@ -53,7 +82,7 @@
             name="Test Creations"
             parent="test_menu_list"
             sequence="10" 
-            action="action_assessment_menu" />
+            action="action_test_creation_menu" />
 
         <menuitem
             id="test_paper_list"
@@ -101,7 +130,7 @@
             name="Questions"
             parent="question_menu_list"
             sequence="50" 
-            action="action_objective_menu" />
+            action="action_question_menu" />
 
         <menuitem
             id="evaluation_menu_list"
@@ -114,13 +143,13 @@
             name="Rubrics"
             parent="evaluation_menu_list"
             sequence="10" 
-            action="action_objective_menu" />
+            action="action_rubric_menu" />
 
         <menuitem
             id="test_result_list"
             name="Results"
             parent="evaluation_menu_list"
             sequence="20" 
-            action="action_objective_menu" />
+            action="action_results_menu" />
     </data>
 </odoo>

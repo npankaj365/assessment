@@ -9,7 +9,7 @@
                     <group>
                         <field name="name" />
                         <field name="description" />
-                        <field name="enabled" readonly="1" />
+                        <field name="enabled" />
                         <field name="lesson" />
                         <field name="subdomain" />
                         <field name="domain" />
