@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
+import logging
+_logger = logging.getLogger(__name__)
 
 class test_creation_asmt(models.Model):
     _name = 'assessment.test_creation_asmt'
@@ -20,6 +22,10 @@ class test_creation_asmt(models.Model):
     subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', domain="[('domain','=',domain)]")
     lesson = fields.Many2one('assessment.lesson_asmt', 'Lesson', domain="[('subdomain','=',subdomain)]")
     
+    @api.multi
+    def generate(self):
+        return self.get_action(self, assessment.action_question_paper)
+
      
 
 class test_paper_asmt(models.Model):

@@ -8,6 +8,8 @@ class domain_asmt(models.Model):
     name = fields.Char()
     description = fields.Text()
     enabled = fields.Boolean()
+
+    subdomain = fields.One2many('assessment.subdomain_asmt', 'domain')
     
 
 class subdomain_asmt(models.Model):
@@ -16,6 +18,8 @@ class subdomain_asmt(models.Model):
     name = fields.Char()
     description = fields.Text()
     enabled = fields.Boolean()
+
+    lesson = fields.One2many('assessment.lesson_asmt', 'subdomain')
 
     domain = fields.Many2one('assessment.domain_asmt', 'Domain')
 
@@ -27,6 +31,8 @@ class lesson_asmt(models.Model):
     description = fields.Text()
     enabled = fields.Boolean()
 
+    objective = fields.One2many('assessment.objective_asmt', 'lesson')
+
     domain = fields.Many2one('assessment.domain_asmt', 'Domain', required=True)
     subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', domain="[('domain','=',domain)]", required=True)
     
@@ -37,6 +43,8 @@ class objective_asmt(models.Model):
     name = fields.Char()
     description = fields.Text()
     enabled = fields.Boolean()
+
+    question = fields.One2many('assessment.question_asmt', 'objective')
 
     domain = fields.Many2one('assessment.domain_asmt', 'Domain')
     subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', domain="[('domain','=',domain)]", required=True)

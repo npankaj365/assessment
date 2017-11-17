@@ -35,6 +35,7 @@
         'views/question_view.xml',
         # 'views/answer_view.xml',
         'views/templates.xml',
+        'reports/reports.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
