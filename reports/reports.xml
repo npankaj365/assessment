@@ -39,25 +39,4 @@
         </t>
     </template>
 
-    <!-- <template id="test_creation_view">
-        <t t-call="report.html_container">
-            <t t-foreach="docs.lesson" t-as="lesson">
-                <t t-foreach="lesson.objective" t-as="objective">
-                    <t t-foreach="objective.question" t-as="question">
-                        <t t-call="report.external_layout">
-                            <div class="page">
-                                <h2 t-field="question.name"/>
-                                <ul>
-                                    <t t-foreach="question.answer" t-as="answer">
-                                        <li><span t-field="answer.description"/></li>
-                                    </t>
-                                </ul>
-                            </div>
-                        </t>
-                    </t>
-                </t>
-            </t>
-        </t>
-    </template> -->
-
 </odoo>
