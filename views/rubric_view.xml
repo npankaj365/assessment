@@ -5,8 +5,8 @@
             <field name="name">Rubrics</field>
             <field name="model">assessment.rubric_asmt</field>
             <field name="arch" type="xml">
-                <tree string="Rubrics List">
-                    <field name="objective" />
+                <tree string="Test Creations">
+                    <field name="objective">
                     <field name="grade_a" />
                     <field name="grade_b" />
                     <field name="grade_c" />
@@ -19,11 +19,8 @@
             <field name="name">Rubrics</field>
             <field name="model">assessment.rubric_asmt</field>
             <field name="arch" type="xml">
-                <form string="Rubric Creations">
+                <form string="Test Creations">
                     <group>
-                        <field name="domain" />
-                        <field name="subdomain" />
-                        <field name="lesson" />
                         <field name="objective" />
                         <field name="grade_a" />
                         <field name="grade_b" />

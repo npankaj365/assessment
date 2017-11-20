@@ -33,7 +33,6 @@
         'views/lesson_view.xml',
         'views/objective_view.xml',
         'views/question_view.xml',
-        'views/rubric_view.xml',
         # 'views/answer_view.xml',
         'views/templates.xml',
         'reports/reports.xml',
