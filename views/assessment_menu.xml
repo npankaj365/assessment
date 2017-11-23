@@ -41,7 +41,8 @@
             id="action_question_menu"
             name="Questions"
             res_model="assessment.question_asmt" 
-            view_mode="tree,form" />
+            view_mode="tree,form"
+            view_type="form" />
 
         <act_window
             id="action_test_creation_menu"
@@ -61,11 +62,6 @@
             res_model="assessment.rubric_asmt" 
             view_mode="tree,form" />
 
-        <act_window
-            id="action_answers_menu"
-            name="Answers"
-            res_model="assessment.answer_asmt"
-            view_mode="tree,form" />
 
         <menuitem 
             id="assessment.menu_root" 

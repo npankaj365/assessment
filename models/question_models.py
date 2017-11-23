@@ -72,23 +72,21 @@ class question_asmt(models.Model):
             ('3','Difficult'),
         ], required=True
     )
-    answer = fields.One2many('assessment.answer_asmt', 'statement')
-    
-    
-    
+    choice1 = fields.Char(string="Answer Choice 1")
+    choice2 = fields.Char(string="Answer Choice 2")
+    choice3 = fields.Char(string="Answer Choice 3")
+    choice4 = fields.Char(string="Answer Choice 4")
+    correct_choice = fields.Selection(
+        [
+            ('1', choice1),
+            ('2', choice2),
+            ('3', choice3),
+            ('4', choice4),
+        ]
+    )
     enabled = fields.Boolean()
-    time_required = fields.Integer(required=True)
+    time_required = fields.Integer('time req.', required=True)
     domain = fields.Many2one('assessment.domain_asmt', 'Domain', required=True)
     subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', required=True, domain="[('domain','=',domain)]")
     lesson = fields.Many2one('assessment.lesson_asmt', 'Lesson', required=True, domain="[('subdomain','=',subdomain)]")
     objective = fields.Many2one('assessment.objective_asmt', 'Objective', required=True, domain="[('lesson','=',lesson)]")
-    
-
-class answer_asmt(models.Model):
-    _name = 'assessment.answer_asmt'
-
-    description = fields.Text()
-    explanation = fields.Text()
-    is_right = fields.Boolean()
-    statement = fields.Many2one('assessment.question_asmt', 'Question', ondelete='cascade')
-

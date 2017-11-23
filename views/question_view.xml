@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="view_form_question" model="ir.ui.view">
+        <!-- <record id="view_form_question" model="ir.ui.view">
             <field name="name">Add Questions</field>
             <field name="model">assessment.question_asmt</field>
             <field name="arch" type="xml">
@@ -11,19 +11,11 @@
                         <field name="explanation" />
                         <field name="question_type" />
                         <field name="question_difficulty" />
-                        <field name="answer">
-                            <tree string="Answers">
-                                <field name="description" />
-                                <field name="explanation" />
-                                <field name="is_right" />
-                            </tree>
-                            <group>
-                                <field name="description" />
-                                <field name="explanation" />
-                                <field name="is_right" />
-                                <field name="question" />
-                            </group>
-                        </field>
+                        <field name="choice1" />
+                        <field name="choice2" />
+                        <field name="choice3" />
+                        <field name="choice4" />
+                        <field name="correct_choice" />
                         <field name="enabled" />
                         <field name="time_required" />
                         <field name="domain" />
@@ -33,6 +25,6 @@
                     </group>
                 </form>
             </field>
-        </record>
+        </record> -->
     </data>
 </odoo>

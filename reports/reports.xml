@@ -14,22 +14,17 @@
                     <div class="page">
                         <ol>
                             <t t-foreach="doc.selected_questions_list" t-as="question">
-                                
-                                    <div class="row">
-                                        <li>
-                                            <span t-field="question.statement" />
-                                            
-                                            <ul>
-                                                <t t-call="assessment.answer_asmt">
-                                                <t t-foreach="question.answer" t-as="answer">
-                                                    
-                                                    <li><span t-field="answer.description" /></li>
-                                                    
-                                                </t>
-                                                </t>
-                                            </ul>
-                                        </li>
-                                    </div>
+                                <div class="row">
+                                    <li>
+                                        <span t-field="question.statement" />
+                                        <ul>
+                                                <li><span t-field="question.choice1" /></li>
+                                                <li><span t-field="question.choice2" /></li>
+                                                <li><span t-field="question.choice3" /></li>
+                                                <li><span t-field="question.choice4" /></li>
+                                        </ul>
+                                    </li>
+                                </div>
                             </t>
                         </ol>
                     </div>
