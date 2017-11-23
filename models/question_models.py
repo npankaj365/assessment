@@ -73,6 +73,9 @@ class question_asmt(models.Model):
         ], required=True
     )
     answer = fields.One2many('assessment.answer_asmt', 'statement')
+    
+    
+    
     enabled = fields.Boolean()
     time_required = fields.Integer(required=True)
     domain = fields.Many2one('assessment.domain_asmt', 'Domain', required=True)

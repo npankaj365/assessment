@@ -10,9 +10,9 @@
                         <field name="name" />
                         <field name="description" />
                         <field name="enabled" />
-                        <field name="lesson" />
-                        <field name="subdomain" />
                         <field name="domain" />
+                        <field name="subdomain" />
+                        <field name="lesson" />                        
                     </group>
                 </form>
             </field>

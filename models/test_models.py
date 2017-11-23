@@ -21,29 +21,38 @@ class test_creation_asmt(models.Model):
     domain = fields.Many2one('assessment.domain_asmt', 'Domain')
     subdomain = fields.Many2one('assessment.subdomain_asmt', 'Subdomain', domain="[('domain','=',domain)]")
     lesson = fields.Many2one('assessment.lesson_asmt', 'Lesson', domain="[('subdomain','=',subdomain)]")
-    selected_questions_list = []
+    selected_questions_list = {}
 
 
     @api.multi
     def generate(self):
-        question_list = []
+        question_list = [][]
         #Get all questions that satisfy the question_type
         lesson = self.env['assessment.lesson_asmt'].search([])
-        for question in lesson.objective.question:
-            if (question.question_type == self.question_type):
-                question_list.append(question)
+        for objective in lesson.objective:
+            for question in objective.question:
+                answer_list = [] #Emptying the answer choices
+                for answer in question.answer:
+                    answer_list.append(answer.description)
+                    print(answer.description)
+                question_list[question.statement] = answer_list #Creating Dictionary with Question Statements and Answer Choices
+        
+        # for question in lesson.objective.question:
+        #     if (question.question_type == self.question_type):
+        #         question_list.append(question)
 
         duration = self.test_duration
         #Generate randomized list
+        q_list = list(question_list)
         while(duration > 0):
             gen = int(random.random()*len(question_list))
-            print("Generated Value is ")
-            print(gen)
-            selection = question_list[gen]
-            if (selection.time_required <= duration):
-                self.selected_questions_list.append(selection)
-                duration -= selection.time_required
-                question_list.remove(question_list[gen])
+            selection = q_list[gen]
+
+            if (question_list[selection].time_required <= duration):
+                print (question_list[selection].statement)
+        #         self.selected_questions_list.append(selection)
+        #         duration -= selection.time_required
+        #         question_list.remove(question_list[gen])
 
      
 
