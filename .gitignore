@@ -1,0 +1,4 @@
+*.pyc
+models/__pycache__/question_models.cpython-36.pyc
+models/__pycache__/question_models.cpython-36.pyc
+models/__pycache__/test_models.cpython-36.pyc
