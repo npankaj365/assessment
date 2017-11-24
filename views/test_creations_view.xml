@@ -24,6 +24,7 @@
                 <form string="Test Creations">
                     <group>
                         <button type="object" name="generate" string="Generate" />
+                        <button type="object" name="clear" string="Clear" />
                     </group>
                     <group>
                         <field name="name" />

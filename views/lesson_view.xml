@@ -23,8 +23,8 @@
                         <field name="name" />
                         <field name="description" />
                         <field name="enabled" />
-                        <field name="subdomain" />
                         <field name="domain" />
+                        <field name="subdomain" />
                     </group>
                 </form>
             </field>

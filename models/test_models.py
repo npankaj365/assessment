@@ -31,11 +31,8 @@ class test_creation_asmt(models.Model):
         lesson = self.env['assessment.lesson_asmt'].search([])
         for objective in lesson.objective:
             for question in objective.question:
-                question_list.append(question) #Creating Dictionary with Question Statements and Answer Choices
-        
-        # for question in lesson.objective.question:
-        #     if (question.question_type == self.question_type):
-        #         question_list.append(question)
+                if (question.question_type == self.question_type):
+                    question_list.append(question) #Creating Dictionary with Question Statements and Answer Choices
 
         duration = self.test_duration
         #Generate randomized list
@@ -45,14 +42,11 @@ class test_creation_asmt(models.Model):
 
             if (selection.time_required <= duration):
                 self.selected_questions_list.append(selection)
-            duration -= selection.time_required
-            question_list.remove(selection)
-            
-        #         self.selected_questions_list.append(selection)
-        #         duration -= selection.time_required
-        #         question_list.remove(question_list[gen])
+                duration -= selection.time_required
+                question_list.remove(selection)
 
-     
+    def clear(self):
+        del(self.selected_questions_list[:])
 
 class test_paper_asmt(models.Model):
     _name = 'assessment.test_paper_asmt'
