@@ -10,23 +10,26 @@
     <template id="assessment.test_creation_asmt">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="web.internal_layout">
+                <t t-call="web.external_layout">
+                    <h2 align="center">Test <span t-field="doc.name" /></h2>
                     <div class="page">
                         <ol>
                             <t t-foreach="doc.selected_questions_list" t-as="question">
                                 <div class="row">
                                     <li>
                                         <span t-field="question.statement" />
-                                        <ul>
-                                                <li><span t-field="question.choice1" /></li>
-                                                <li><span t-field="question.choice2" /></li>
-                                                <li><span t-field="question.choice3" /></li>
-                                                <li><span t-field="question.choice4" /></li>
+                                        <ul style="list-style:none">
+                                            <li><i class="fa fa-circle-o" aria-hidden="true"></i>&#9;<span t-field="question.choice1" /></li>
+                                            <li><i class="fa fa-circle-o" aria-hidden="true"></i>&#9;<span t-field="question.choice2" /></li>
+                                            <li><i class="fa fa-circle-o" aria-hidden="true"></i>&#9;<span t-field="question.choice3" /></li>
+                                            <li><i class="fa fa-circle-o" aria-hidden="true"></i>&#9;<span t-field="question.choice4" /></li>
                                         </ul>
                                     </li>
                                 </div>
                             </t>
                         </ol>
+                        <br/>
+                        <br/>
                     </div>
                 </t>
             </t>

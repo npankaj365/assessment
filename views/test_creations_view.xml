@@ -6,14 +6,14 @@
             <field name="model">assessment.test_creation_asmt</field>
             <field name="arch" type="xml">
                 <tree string="Test Creations">
-                        <field name="name" />
-                        <field name="description" />
-                        <field name="date" />
-                        <field name="test_duration" />
-                        <field name="question_type" />
-                        <field name="domain" />
-                        <field name="subdomain" />
-                        <field name="lesson" />
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="date" />
+                    <field name="test_duration" />
+                    <field name="question_type" />
+                    <field name="domain" />
+                    <field name="subdomain" />
+                    <field name="lesson" />
                 </tree>
             </field>
         </record>
@@ -22,20 +22,22 @@
             <field name="model">assessment.test_creation_asmt</field>
             <field name="arch" type="xml">
                 <form string="Test Creations">
-                    <group>
-                        <button type="object" name="generate" string="Generate" />
-                        <button type="object" name="clear" string="Clear" />
-                    </group>
-                    <group>
-                        <field name="name" />
-                        <field name="description" />
-                        <field name="date" />
-                        <field name="test_duration" />
-                        <field name="question_type" />
-                        <field name="domain" />
-                        <field name="subdomain" />
-                        <field name="lesson" />
-                    </group>
+                    <header>
+                        <button type="object" class="btn btn-success" name="generate" string="Generate" />
+                        <button type="object" class="btn btn-warning" name="clear" string="Clear" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="date" />
+                            <field name="test_duration" />
+                            <field name="question_type" />
+                            <field name="domain" />
+                            <field name="subdomain" />
+                            <field name="lesson" />
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>

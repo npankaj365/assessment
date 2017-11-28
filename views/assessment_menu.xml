@@ -7,11 +7,11 @@
             res_model="assessment.test_creation_asmt" 
             view_mode="tree" />
 
-        <act_window 
+        <!-- <act_window 
             id="action_testpaper_menu"
             name="Test Papers"
             res_model="assessment.test_paper_asmt" 
-            view_mode="tree" />
+            view_mode="tree" /> -->
         
         <act_window 
             id="action_domain_menu"
@@ -54,13 +54,14 @@
             id="action_rubric_menu"
             name="Rubrics"
             res_model="assessment.rubric_asmt" 
-            view_mode="tree,form" />
+            view_mode="tree,form" 
+            view_type="tree" />
 
-        <act_window
+        <!-- <act_window
             id="action_results_menu"
             name="Results"
             res_model="assessment.rubric_asmt" 
-            view_mode="tree,form" />
+            view_mode="tree,form" /> -->
 
 
         <menuitem 
@@ -80,12 +81,12 @@
             sequence="10" 
             action="action_test_creation_menu" />
 
-        <menuitem
+        <!-- <menuitem
             id="test_paper_list"
             name="Test Papers"
             parent="test_menu_list"
             sequence="20" 
-            action="action_testpaper_menu" />
+            action="action_testpaper_menu" /> -->
 
         <menuitem
             id="question_menu_list"
@@ -141,11 +142,11 @@
             sequence="10" 
             action="action_rubric_menu" />
 
-        <menuitem
+        <!-- <menuitem
             id="test_result_list"
             name="Results"
             parent="evaluation_menu_list"
             sequence="20" 
-            action="action_results_menu" />
+            action="action_results_menu" /> -->
     </data>
 </odoo>
